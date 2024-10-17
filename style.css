@@ -1,12 +1,13 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Bodoni MT, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #42C5CD;
     box-sizing: border-box;
 }
 
 header, footer {
-    background-color: #333;
+    background-color: #c9e1be;
     color: white;
     text-align: center;
     padding: 1em 0;
