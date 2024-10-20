@@ -1,17 +1,14 @@
-document.addEventListener('DOMContentLoaded', () => {
-    fetch('https://randomuser.me/api/?results=3')
-        .then(response => response.json())
-        .then(data => {
-            const projectList = document.getElementById('project-list');
-            data.results.forEach(user => {
-                const project = document.createElement('div');
-                project.classList.add('project');
-                project.innerHTML = `
-                    <img src="${user.picture.large}" alt="${user.name.first}">
-                    <h3>${user.name.first} ${user.name.last}</h3>
-                    <p>${user.email}</p>
-                `;
-                projectList.appendChild(project);
-            });
+document.addEventListener("DOMContentLoaded", function() {
+    fetch('https://jsonplaceholder.typicode.com/posts') 
+      .then(response => response.json())
+      .then(data => {
+        const apiContent = document.getElementById('api-content');
+        data.forEach(item => {
+          const div = document.createElement('div');
+          div.className = 'api-item';
+          div.innerHTML = `<h3>${item.title}</h3><p>${item.body}</p>`;
+          apiContent.appendChild(div);
         });
-});
+      })
+      .catch(error => console.error('Hiba az API hívás során:', error));
+  });
